@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/jpeg;base64,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"/>
+    <title>ALIMAN</title>
+
+</head>
+<body>
+
+    <video autoplay muted loop class="video-background">
+        <source src="https://media.istockphoto.com/id/1150048831/video/clean-and-comfort-white-pillow-on-bed.mp4?s=mp4-640x640-is&k=20&c=j9NhCuIpeWS3GsWyn_0P9UEJS8nsQAfh0DcslWeellI=">
+    </video>
+    
+    <header>
+        <div class="container">
+            <h1>Aliman</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">О магазине</a></li>
+                    <li><a href="#">Гарантия и возврат</a></li>
+                    <li><a href="#">Оптовикам</a></li>
+                    <li><a href="#">Блог</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </nav>
+
+            <div class="cart-icon">
+                <svg id="cart-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48">
+                    <path d="M7 18c-1.104 0-2 .896-2 2s.896 2 2 2 2-.896 2-2-.896-2-2-2zm10 0c-1.104 0-2 .896-2 2s.896 2 2 2 2-.896 2-2-.896-2-2-2zm1.964-2.485c.037.105.036.217.036.327v.158c0 .144-.008.285-.028.424l-1.478 8.576c-.094.54-.554.94-1.1.94h-12.848c-.545 0-1.004-.4-1.1-.94l-1.478-8.576c-.02-.139-.028-.28-.028-.424v-.158c0-.11 0-.222.036-.327l1.899-6.772c.141-.502.598-.843 1.116-.843h12.484c.518 0 .975.341 1.116.843l1.899 6.772zm-2.822-1.406l-1.789-6.375h-10.703l-1.789 6.375h14.281zm-6.142-12.109c.542 0 .978.438.978.978s-.436.978-.978.978-.978-.438-.978-.978.436-.978.978-.978z"/>
+                </svg>
+                <span id="cart-count">0</span>
+            </div>
+
+            <div class="contact-info">
+                <span>+996 990 949 522</span>
+                <span>Доставка в г. Джала-Абад</span>
+            </div>
+        </div>
+    </header>
+
+                  <nav class="category-nav">
+        <button data-category="notebooks">Полотенца махровые</button>
+            <button data-category="phones">трикотаж</button>
+            <button data-category="sisors">Простыня </button>
+            <button data-category="tablets">Пледы </button>
+            <button data-category="carob">Коробки для полотенц </button>
+            <button data-category="fartuk">Фартук  </button>
+            <button data-category="naper">Наперники  </button>
+            <button data-category="bak">Полотенца вафельное  </button>
+            <button data-category="micro">Полотенца микрофибра</button>
+            <button data-category="all">ВСЕ ТОВАРЫ</button>
+        </nav>
+    <main>
+        <section class="main-content">
+
+            <div class="product-grid">
+                <div class="product-item">
+                    <img src="https://cdn.pixabay.com/photo/2017/02/16/10/51/pillow-2071096_640.jpg" alt="Компьютер 1">
+<p>Полотенца вафельное Узбекистан  </p>                    <p class="price" data-price="1000">1000 сом</p>
+                    <select class="size">
+                            <option value="1000" selected>по 5 - 1000 сом</option>
+                            <option value="1200">по 10 - 1200 сом</option>
+                            <option value="1500">по 20 - 1500 сом</option>
+                    </select>
+                    <button>Добавить в корзину</button>
+                </div>
+                
+                <div class="product-item">
+                    <img src="https://cdn.pixabay.com/photo/2017/02/16/10/51/pillow-2071096_640.jpg" alt="Компьютер 1">
+<p>Полотенца вафельное Узбекистан  </p>                    <p class="price" data-price="1000">1000 сом</p>
+                    <select class="size">
+                            <option value="1000" selected>по 5 - 1000 сом</option>
+                            <option value="1200">по 10 - 1200 сом</option>
+                            <option value="1500">по 20 - 1500 сом</option>
+                    </select>
+                    <button>Добавить в корзину</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="https://cdn.pixabay.com/photo/2017/02/16/10/51/pillow-2071096_640.jpg" alt="Компьютер 1">
+<p>Полотенца вафельное Узбекистан  </p>                    <p class="price" data-price="1000">1000 сом</p>
+                    <select class="size">
+                            <option value="1000" selected>по 5 - 1000 сом</option>
+                            <option value="1200">по 10 - 1200 сом</option>
+                            <option value="1500">по 20 - 1500 сом</option>
+                    </select>
+                    <button>Добавить в корзину</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="https://cdn.pixabay.com/photo/2017/02/16/10/51/pillow-2071096_640.jpg" alt="Компьютер 1">
+<p>Полотенца вафельное Узбекистан  </p>                    <p class="price" data-price="1000">1000 сом</p>
+                    <select class="size">
+                            <option value="1000" selected>по 5 - 1000 сом</option>
+                            <option value="1200">по 10 - 1200 сом</option>
+                            <option value="1500">по 20 - 1500 сом</option>
+                    </select>
+                    <button>Добавить в корзину</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="https://cdn.pixabay.com/photo/2017/02/16/10/51/pillow-2071096_640.jpg" alt="Компьютер 1">
+<p>Полотенца вафельное Узбекистан  </p>                    <p class="price" data-price="1000">1000 сом</p>
+                    <select class="size">
+                            <option value="1000" selected>по 5 - 1000 сом</option>
+                            <option value="1200">по 10 - 1200 сом</option>
+                            <option value="1500">по 20 - 1500 сом</option>
+                    </select>
+                    <button>Добавить в корзину</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="https://cdn.pixabay.com/photo/2017/02/16/10/51/pillow-2071096_640.jpg" alt="Компьютер 1">
+<p>Полотенца вафельное Узбекистан  </p>                    <p class="price" data-price="1000">1000 сом</p>
+                    <select class="size">
+                            <option value="1000" selected>по 5 - 1000 сом</option>
+                            <option value="1200">по 10 - 1200 сом</option>
+                            <option value="1500">по 20 - 1500 сом</option>
+                    </select>
+                    <button>Добавить в корзину</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="https://cdn.pixabay.com/photo/2017/02/16/10/51/pillow-2071096_640.jpg" alt="Компьютер 1">
+<p>Полотенца вафельное Узбекистан  </p>                    <p class="price" data-price="1000">1000 сом</p>
+                    <select class="size">
+                            <option value="1000" selected>по 5 - 1000 сом</option>
+                            <option value="1200">по 10 - 1200 сом</option>
+                            <option value="1500">по 20 - 1500 сом</option>
+                    </select>
+                    <button>Добавить в корзину</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="https://cdn.pixabay.com/photo/2017/02/16/10/51/pillow-2071096_640.jpg" alt="Компьютер 1">
+<p>Полотенца вафельное Узбекистан  </p>                    <p class="price" data-price="1000">1000 сом</p>
+                    <select class="size">
+                            <option value="1000" selected>по 5 - 1000 сом</option>
+                            <option value="1200">по 10 - 1200 сом</option>
+                            <option value="1500">по 20 - 1500 сом</option>
+                    </select>
+                    <button>Добавить в корзину</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="https://cdn.pixabay.com/photo/2017/02/16/10/51/pillow-2071096_640.jpg" alt="Компьютер 1">
+<p>Полотенца вафельное Узбекистан  </p>                    <p class="price" data-price="1000">1000 сом</p>
+                    <select class="size">
+                            <option value="1000" selected>по 5 - 1000 сом</option>
+                            <option value="1200">по 10 - 1200 сом</option>
+                            <option value="1500">по 20 - 1500 сом</option>
+                    </select>
+                    <button>Добавить в корзину</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="https://cdn.pixabay.com/photo/2017/02/16/10/51/pillow-2071096_640.jpg" alt="Компьютер 1">
+<p>Полотенца вафельное Узбекистан  </p>                    <p class="price" data-price="1000">1000 сом</p>
+                    <select class="size">
+                            <option value="1000" selected>по 5 - 1000 сом</option>
+                            <option value="1200">по 10 - 1200 сом</option>
+                            <option value="1500">по 20 - 1500 сом</option>
+                    </select>
+                    <button>Добавить в корзину</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="https://cdn.pixabay.com/photo/2017/02/16/10/51/pillow-2071096_640.jpg" alt="Компьютер 1">
+<p>Полотенца вафельное Узбекистан  </p>                    <p class="price" data-price="1000">1000 сом</p>
+                    <select class="size">
+                            <option value="1000" selected>по 5 - 1000 сом</option>
+                            <option value="1200">по 10 - 1200 сом</option>
+                            <option value="1500">по 20 - 1500 сом</option>
+                    </select>
+                    <button>Добавить в корзину</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="https://cdn.pixabay.com/photo/2017/02/16/10/51/pillow-2071096_640.jpg" alt="Компьютер 1">
+<p>Полотенца вафельное Узбекистан  </p>                    <p class="price" data-price="1000">1000 сом</p>
+                    <select class="size">
+                            <option value="1000" selected>по 5 - 1000 сом</option>
+                            <option value="1200">по 10 - 1200 сом</option>
+                            <option value="1500">по 20 - 1500 сом</option>
+                    </select>
+                    <button>Добавить в корзину</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="https://cdn.pixabay.com/photo/2017/02/16/10/51/pillow-2071096_640.jpg" alt="Компьютер 1">
+<p>Полотенца вафельное Узбекистан  </p>                    <p class="price" data-price="1000">1000 сом</p>
+                    <select class="size">
+                            <option value="1000" selected>по 5 - 1000 сом</option>
+                            <option value="1200">по 10 - 1200 сом</option>
+                            <option value="1500">по 20 - 1500 сом</option>
+                    </select>
+                    <button>Добавить в корзину</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="https://cdn.pixabay.com/photo/2017/02/16/10/51/pillow-2071096_640.jpg" alt="Компьютер 1">
+<p>Полотенца вафельное Узбекистан  </p>                    <p class="price" data-price="1000">1000 сом</p>
+                    <select class="size">
+                            <option value="1000" selected>по 5 - 1000 сом</option>
+                            <option value="1200">по 10 - 1200 сом</option>
+                            <option value="1500">по 20 - 1500 сом</option>
+                    </select>
+                    <button>Добавить в корзину</button>
+                </div>
+
+
+
+            </div>
+        </section>
+    </main>
+    <!-- //___________________________________________________________________________________________________________________________________________________________________________________________________________________________________ -->
+    <main>
+        <section class="main-content">
+            <div class="product-grid3">
+                <div class="product-item">
+                    <img src="https://cdn.pixabay.com/photo/2017/02/16/10/51/pillow-2071096_640.jpg" alt="Компьютер 1">
+<p>Полотенца вафельное Китай</p>                    <p class="price" data-price="1000">1000 сом</p>
+                    <select class="size">
+                            <option value="1000" selected>по 5 - 1000 сом</option>
+                            <option value="1200">по 10 - 1200 сом</option>
+                            <option value="1500">по 20 - 1500 сом</option>
+                    </select>
+                    <button>Добавить в корзину</button>
+                </div>
+                
+                <div class="product-item">
+                    <img src="https://cdn.pixabay.com/photo/2017/02/16/10/51/pillow-2071096_640.jpg" alt="Компьютер 1">
+<p>Полотенца вафельное Китай   </p>                    <p class="price" data-price="1000">1000 сом</p>
+                    <select class="size">
+                            <option value="1000" selected>по 5 - 1000 сом</option>
+                            <option value="1200">по 10 - 1200 сом</option>
+                            <option value="1500">по 20 - 1500 сом</option>
+                    </select>
+                    <button>Добавить в корзину</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="https://cdn.pixabay.com/photo/2017/02/16/10/51/pillow-2071096_640.jpg" alt="Компьютер 1">
+<p>Полотенца вафельное Китай   </p>                    <p class="price" data-price="1000">1000 сом</p>
+                    <select class="size">
+                            <option value="1000" selected>по 5 - 1000 сом</option>
+                            <option value="1200">по 10 - 1200 сом</option>
+                            <option value="1500">по 20 - 1500 сом</option>
+                    </select>
+                    <button>Добавить в корзину</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="https://cdn.pixabay.com/photo/2017/02/16/10/51/pillow-2071096_640.jpg" alt="Компьютер 1">
+<p>Полотенца вафельное Китай   </p>                    <p class="price" data-price="1000">1000 сом</p>
+                    <select class="size">
+                            <option value="1000" selected>по 5 - 1000 сом</option>
+                            <option value="1200">по 10 - 1200 сом</option>
+                            <option value="1500">по 20 - 1500 сом</option>
+                    </select>
+                    <button>Добавить в корзину</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="https://cdn.pixabay.com/photo/2017/02/16/10/51/pillow-2071096_640.jpg" alt="Компьютер 1">
+<p>Полотенца вафельное Китай   </p>                    <p class="price" data-price="1000">1000 сом</p>
+                    <select class="size">
+                            <option value="1000" selected>по 5 - 1000 сом</option>
+                            <option value="1200">по 10 - 1200 сом</option>
+                            <option value="1500">по 20 - 1500 сом</option>
+                    </select>
+                    <button>Добавить в корзину</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="https://cdn.pixabay.com/photo/2017/02/16/10/51/pillow-2071096_640.jpg" alt="Компьютер 1">
+<p>Полотенца вафельное Китай   </p>                    <p class="price" data-price="1000">1000 сом</p>
+                    <select class="size">
+                            <option value="1000" selected>по 5 - 1000 сом</option>
+                            <option value="1200">по 10 - 1200 сом</option>
+                            <option value="1500">по 20 - 1500 сом</option>
+                    </select>
+                    <button>Добавить в корзину</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="https://cdn.pixabay.com/photo/2017/02/16/10/51/pillow-2071096_640.jpg" alt="Компьютер 1">
+<p>Полотенца вафельное Китай   </p>                    <p class="price" data-price="1000">1000 сом</p>
+                    <select class="size">
+                            <option value="1000" selected>по 5 - 1000 сом</option>
+                            <option value="1200">по 10 - 1200 сом</option>
+                            <option value="1500">по 20 - 1500 сом</option>
+                    </select>
+                    <button>Добавить в корзину</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="https://cdn.pixabay.com/photo/2017/02/16/10/51/pillow-2071096_640.jpg" alt="Компьютер 1">
+<p>Полотенца вафельное Китай   </p>                    <p class="price" data-price="1000">1000 сом</p>
+                    <select class="size">
+                            <option value="1000" selected>по 5 - 1000 сом</option>
+                            <option value="1200">по 10 - 1200 сом</option>
+                            <option value="1500">по 20 - 1500 сом</option>
+                    </select>
+                    <button>Добавить в корзину</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="https://cdn.pixabay.com/photo/2017/02/16/10/51/pillow-2071096_640.jpg" alt="Компьютер 1">
+<p>Полотенца вафельное Китай   </p>                    <p class="price" data-price="1000">1000 сом</p>
+                    <select class="size">
+                            <option value="1000" selected>по 5 - 1000 сом</option>
+                            <option value="1200">по 10 - 1200 сом</option>
+                            <option value="1500">по 20 - 1500 сом</option>
+                    </select>
+                    <button>Добавить в корзину</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="https://cdn.pixabay.com/photo/2017/02/16/10/51/pillow-2071096_640.jpg" alt="Компьютер 1">
+<p>Полотенца вафельное Китай   </p>                    <p class="price" data-price="1000">1000 сом</p>
+                    <select class="size">
+                            <option value="1000" selected>по 5 - 1000 сом</option>
+                            <option value="1200">по 10 - 1200 сом</option>
+                            <option value="1500">по 20 - 1500 сом</option>
+                    </select>
+                    <button>Добавить в корзину</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="https://cdn.pixabay.com/photo/2017/02/16/10/51/pillow-2071096_640.jpg" alt="Компьютер 1">
+<p>Полотенца вафельное Китай   </p>                    <p class="price" data-price="1000">1000 сом</p>
+                    <select class="size">
+                            <option value="1000" selected>по 5 - 1000 сом</option>
+                            <option value="1200">по 10 - 1200 сом</option>
+                            <option value="1500">по 20 - 1500 сом</option>
+                    </select>
+                    <button>Добавить в корзину</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="https://cdn.pixabay.com/photo/2017/02/16/10/51/pillow-2071096_640.jpg" alt="Компьютер 1">
+<p>Полотенца вафельное Китай   </p>                    <p class="price" data-price="1000">1000 сом</p>
+                    <select class="size">
+                            <option value="1000" selected>по 5 - 1000 сом</option>
+                            <option value="1200">по 10 - 1200 сом</option>
+                            <option value="1500">по 20 - 1500 сом</option>
+                    </select>
+                    <button>Добавить в корзину</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="https://cdn.pixabay.com/photo/2017/02/16/10/51/pillow-2071096_640.jpg" alt="Компьютер 1">
+<p>Полотенца вафельное Китай   </p>                    <p class="price" data-price="1000">1000 сом</p>
+                    <select class="size">
+                            <option value="1000" selected>по 5 - 1000 сом</option>
+                            <option value="1200">по 10 - 1200 сом</option>
+                            <option value="1500">по 20 - 1500 сом</option>
+                    </select>
+                    <button>Добавить в корзину</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="https://cdn.pixabay.com/photo/2017/02/16/10/51/pillow-2071096_640.jpg" alt="Компьютер 1">
+<p>Полотенца вафельное Китай   </p>                    <p class="price" data-price="1000">1000 сом</p>
+                    <select class="size">
+                            <option value="1000" selected>по 5 - 1000 сом</option>
+                            <option value="1200">по 10 - 1200 сом</option>
+                            <option value="1500">по 20 - 1500 сом</option>
+                    </select>
+                    <button>Добавить в корзину</button>
+                </div>
+            
+            </div>
+        </section>
+    </main>
+
+
+
+    
+<style>
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #2c3e50;
+}
+
+.video-background {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    object-fit: cover;
+}
+
+    header {
+        background-color: #303030;
+        padding: 10px 0;
+        border-bottom: 2px solid #383838;
+    }
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 29px;
+    color: #ffffff;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin-right: 29px;
+}
+
+/* Стили для навигации */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    font-size: 25px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    font-style: italic;
+    font-weight: 700;
+}
+nav ul li a:hover {
+    background-color: #007bff;
+    color: white;
+    transform: scale(1.1);
+
+}
+
+
+.contact-info {
+    text-align: right;
+    font-size: 25px;
+    color: #ffffff;
+}
+
+.cart-icon {
+    position: relative;
+    cursor: pointer;
+}
+
+.cart-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+#cart-count {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+   
+}
+
+.catalog-button {
+    background-color: #b3ada8;
+    color: #0e0b0b;
+    border: none;
+    padding: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 15px;
+
+}
+
+
+.category-nav {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+
+}
+
+.category-nav button {
+    background-color: #d8d8d8;
+    color: #000000;
+    border: none;
+    padding: 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+    font-style: italic;
+    
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+
+}
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    width: 100%;
+    padding: 100px;
+    background-color: rgba(233, 192, 103, 0.5);
+    border-radius: 15px;
+
+}
+
+.product-grid2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    width: 100%;
+    padding: 100px;
+    background-color: rgba(78, 78, 78, 0.5);
+    border-radius: 15px;
+
+}
+
+.product-grid3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    width: 100%;
+    padding: 100px;
+    background-color: rgba(207, 107, 107, 0.5);
+    border-radius: 15px;
+
+}
+.product-item {
+    opacity: 0;
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.product-item.slide-in-left {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.product-item.slide-in-right {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0%);
+    }
+}
+
+
+.product-item img {
+    max-width: 100%;
+    height: 200px;
+    border-radius: 10%;
+}
+
+.product-item button {
+    background-color: rgb(83, 83, 83);
+    color: #d3d3d3;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 1em;
+}
+
+.product-item select.size {
+    padding: 8px;
+    border: 1px solid #525151;
+    border-radius: 99px;
+    font-size: 16px;
+    background-color: #838383;
+    width: 100%;
+    margin: 12px 0;
+    transition: border-color 0.2s;
+}
+
+.product-item select.size:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Стили для текстов названий товаров */
+.product-item p {
+    margin: 8px 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: capitalize; /* делает первую букву заглавной */
+    font-style: italic;
+}
+
+
+
+.bottom-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    text-align: center;
+    
+}
+
+.bottom-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.bottom-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+.bottom-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(65, 61, 66, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    color: #d3d3d3;
+}
+
+.bottom-text h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.bottom-text p {
+    margin: 5px 0 0;
+    font-size: 16px;
+}
+
+.product-item img,
+.bottom-item img {
+    transition: transform 0.3s ease;
+}
+
+.product-item:hover img,
+.bottom-item:hover img {
+    transform: scale(1.1);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.cart-total {
+    margin-top: 20px;
+}
+
+#checkout-button {
+    background-color: green;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+
+footer {
+    background-color: grey; /* Черный фон футера */
+    color: #fff; /* Белый текст */
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .footer-content {
+    max-width: 1200px; /* Ширина футера */
+    margin: 0 auto; /* Центрирование футера */
+  }
+  
+  .footer-content p {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+  
+  .footer-content iframe {
+    border: 0;
+    border-radius: 8px;
+    width: 100%;
+    height: 300px;
+  }
+  
+  .footer-social {
+    margin: 20px 0;
+  }
+  
+  .social-icon {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 20px;
+    text-decoration: none;
+  }
+  
+  .social-icon:hover {
+    color: #ff4500; /* Оранжевый цвет при наведении */
+  }
+  
+  
+  
+  .footer-info {
+    margin: 20px 0;
+    font-size: 14px;
+  }
+  
+  .footer-apps {
+    margin: 20px 0;
+  }
+  
+  .app-icon img {
+    width: 150px; /* Размер значков */
+    margin: 0 10px;
+  }
+  
+  .footer-sitemap {
+    margin: 20px 0;
+  }
+  
+  .footer-sitemap a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .footer-sitemap a:hover {
+    color: #ff4500; /* Оранжевый цвет при наведении */
+  }
+  
+  @media (max-width: 768px) {
+    .footer-content iframe {
+      height: 200px; /* Уменьшенная высота карты для мобильных устройств */
+    }
+  }
+
+  .card2 {
+    position: relative;
+    padding-top: 50px;
+    transform-style: preserve-3d;
+    background-size: 60px 60px;
+    background-position: 0 0, 0 0;
+    width: 100%;
+    box-shadow: rgba(142, 142, 142, 0.3) 0px 30px 30px -10px;
+    transition: all 0.5s ease-in-out;
+    border-radius: 15%;
+}
+
+.card2:hover {
+    background-position: -100px 100px, -100px 100px;
+    transform: rotate3d(0.5, 1, 0, 30deg);
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    border-radius: 15%;
+}
+
+.content-box {
+    background: rgba(81, 81, 82, 0.9);
+    transition: all 0.5s ease-in-out;
+    padding: 60px 25px 25px 25px;
+    transform-style: preserve-3d;
+    border-radius: 15%;
+}
+
+.content-box .card-title {
+    display: inline-block;
+    color: white;
+    font-size: 25px;
+    font-weight: 900;
+    transition: all 0.5s ease-in-out;
+    transform: translate3d(0px, 0px, 50px);
+}
+
+.content-box .card-title:hover {
+    transform: translate3d(0px, 0px, 60px);
+}
+
+.content-box .card-content {
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #f2f2f2;
+    transition: all 0.5s ease-in-out;
+    transform: translate3d(0px, 0px, 30px);
+}
+
+.content-box .card-content:hover {
+    transform: translate3d(0px, 0px, 60px);
+}
+
+.parent {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+  }
+
+
+</style>
+
+
+<div id="cart-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Корзина</h2>
+        <ul id="cart-items"></ul>
+        <div class="cart-total">
+            <p>Общая сумма: <span id="total-price"> 0 </span></p>
+        </div>
+        <button id="checkout-button">Купить</button>
+    </div>
+</div>
+
+    <script src="./main.js"></script>
+</body>
+</html>
+
+
+
+
+
+

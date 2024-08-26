@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контактные данные</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0c0c0c;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(250, 5, 5, 0.1);
+            border-radius: 15px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        fieldset {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background-color: #fafafa;
+        }
+
+        legend {
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        input[type="file"] {
+            width: 100%;
+            padding: 0.5rem;
+            margin-top: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="radio"] {
+            margin-right: 0.5rem;
+        }
+
+        .address,
+        .delivery-options,
+        .payment-options {
+            margin-bottom: 1rem;
+        }
+
+        button[type="submit"],
+        button[type="reset"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 0.75rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-right: 0.5rem;
+        }
+
+        button[type="submit"]:hover,
+        button[type="reset"]:hover {
+            background-color: #0056b3;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #confirmation {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Контактные данные</h1>
+        <form id="contact-form">
+            <input type="hidden" name="to_name" value="Алиман"> <!-- Имя получателя -->
+            
+            <fieldset>
+                <legend>Ваше имя *</legend>
+                <input type="text" name="from_name" required aria-label="Ваше имя" placeholder="Введите ваше имя">
+            </fieldset>
+
+            <fieldset>
+                <legend>Ваш телефон *</legend>
+                <input type="tel" name="phone" required aria-label="Ваш телефон" placeholder="Введите ваш телефон">
+            </fieldset>
+
+
+            <fieldset>
+                <legend>Сообщение *</legend>
+                <legend>вы должны сюда написать названия товар и количество и итоговую цену</legend>
+                <textarea name="сообщение" required aria-label="Ваше сообщение" placeholder="Введите ваше сообщение"></textarea>
+            </fieldset>
+
+            <fieldset class="address">
+                <legend>Адрес доставки *</legend>
+                <label for="city">Ваш город *</label>
+                <input type="text" id="city" name="city" required placeholder="Ваш город" aria-label="Ваш город">
+
+                <label for="street">Улица, дом, квартира *</label>
+                <input type="text" id="street" name="street" required placeholder="Улица, дом, квартира" aria-label="Улица, дом, квартира">
+            </fieldset>
+
+            <fieldset>
+
+                <h2>способ оплаты</h2>
+                <p>мбанк 505213393</p>
+
+            </fieldset>
+
+
+
+
+            <!-- Остальная часть формы, например, адрес, способы оплаты и т. д., как в предыдущем примере -->
+
+            <button type="submit">Отправить</button>
+
+        </form>
+
+        <div id="confirmation" class="hidden">
+            <h2>Ваше сообщение было успешно отправлено!</h2>
+            <p>Спасибо за ваш запрос. Мы свяжемся с вами в ближайшее время.</p>
+        </div>
+    </div>
+
+    <!-- Скрипты должны быть размещены внизу, чтобы DOM был полностью загружен -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            emailjs.init('wBKnix4q4L3mmnHoa'); // Ваш открытый ключ EmailJS
+
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault(); // Останавливаем стандартное поведение формы
+
+                const form = this; // Сохраняем форму для отправки
+
+                emailjs.sendForm('service_sjfd3ao', 'template_tlrml7a', form)
+                    .then(function(response) {
+                        console.log('Успешно отправлено:', response);
+                        document.getElementById('contact-form').style.display = 'none';
+                        document.getElementById('confirmation').classList.remove('hidden');
+                    }, function(error) {
+                        console.error('Ошибка отправки:', error);
+                    });
+            });
+        });
+    </script>
+</body>
+</html>

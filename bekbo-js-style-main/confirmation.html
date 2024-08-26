@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHq+2Y1cPSAZ6DP40RYLDORF3zofc3wX+og4xt14ec+FxmAf+uW3bbUaWgZwIC/QS77iyspg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .input-group i {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            color: #999;
+        }
+
+        .input-group input {
+            width: calc(100% - 2.5rem);
+            padding: 0.75rem 1rem 0.75rem 2.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        .input-group input:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Регистрация</h1>
+        <div class="error" id="error">Пожалуйста, заполните все поля.</div>
+        <form id="registrationForm" class="form">
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" id="firstName" name="firstName" placeholder="Имя" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-user-tag"></i>
+                <input type="text" id="lastName" name="lastName" placeholder="Фамилия" required>
+            </div>
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('#registrationForm');
+            const errorDiv = document.querySelector('#error');
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault(); // Предотвращаем стандартное поведение отправки формы
+
+                // Получаем значения из полей формы
+                const firstName = document.querySelector('#firstName').value.trim();
+                const lastName = document.querySelector('#lastName').value.trim();
+
+                // Проверяем, что все поля заполнены
+                if (firstName === '' || lastName === '') {
+                    errorDiv.style.display = 'block';
+                    return;
+                }
+
+                // Формируем сообщение
+                const message = `Здравствуйте! Меня зовут ${firstName} ${lastName}.`;
+
+                // Перенаправляем на WhatsApp с сообщением
+                const phoneNumber = '+996505213393'; // Замените на ваш номер телефона
+                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+                window.location.href = whatsappUrl;
+            });
+        });
+    </script>
+</body>
+</html>

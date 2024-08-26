@@ -1,0 +1,489 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+/* .video-background {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    object-fit: cover;
+} */
+
+    header {
+        background-color: #303030;
+        padding: 10px 0;
+        border-bottom: 2px solid #383838;
+    }
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 29px;
+    color: #ffffff;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin-right: 29px;
+}
+
+/* Стили для навигации */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    font-size: 25px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    font-style: italic;
+    font-weight: 700;
+}
+nav ul li a:hover {
+    background-color: #007bff;
+    color: white;
+    transform: scale(1.1);
+
+}
+
+
+.contact-info {
+    text-align: right;
+    font-size: 25px;
+    color: #ffffff;
+}
+
+.cart-icon {
+    position: relative;
+    cursor: pointer;
+}
+
+.cart-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+#cart-count {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+   
+}
+
+.catalog-button {
+    background-color: #b3ada8;
+    color: #0e0b0b;
+    border: none;
+    padding: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 15px;
+
+}
+
+
+.category-nav {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+
+}
+
+.category-nav button {
+    background-color: #d8d8d8;
+    color: #000000;
+    border: none;
+    padding: 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+    font-style: italic;
+    
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    width: 100%;
+    padding: 100px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+
+}
+
+.product-item {
+    opacity: 0;
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.product-item.slide-in-left {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.product-item.slide-in-right {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0%);
+    }
+}
+
+
+.product-item img {
+    max-width: 100%;
+    height: 200px;
+    border-radius: 10%;
+}
+
+.product-item button {
+    background-color: rgb(83, 83, 83);
+    color: #d3d3d3;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 1em;
+}
+
+.product-item select.size {
+    padding: 8px;
+    border: 1px solid #525151;
+    border-radius: 99px;
+    font-size: 16px;
+    background-color: #838383;
+    width: 100%;
+    margin: 12px 0;
+    transition: border-color 0.2s;
+}
+
+.product-item select.size:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Стили для текстов названий товаров */
+.product-item p {
+    margin: 8px 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: capitalize; /* делает первую букву заглавной */
+    font-style: italic;
+}
+
+
+
+.bottom-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    text-align: center;
+    
+}
+
+.bottom-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.bottom-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+.bottom-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(65, 61, 66, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    color: #d3d3d3;
+}
+
+.bottom-text h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.bottom-text p {
+    margin: 5px 0 0;
+    font-size: 16px;
+}
+
+.product-item img,
+.bottom-item img {
+    transition: transform 0.3s ease;
+}
+
+.product-item:hover img,
+.bottom-item:hover img {
+    transform: scale(1.1);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.cart-total {
+    margin-top: 20px;
+}
+
+#checkout-button {
+    background-color: green;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+
+footer {
+    background-color: grey; /* Черный фон футера */
+    color: #fff; /* Белый текст */
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .footer-content {
+    max-width: 1200px; /* Ширина футера */
+    margin: 0 auto; /* Центрирование футера */
+  }
+  
+  .footer-content p {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+  
+  .footer-content iframe {
+    border: 0;
+    border-radius: 8px;
+    width: 100%;
+    height: 300px;
+  }
+  
+  .footer-social {
+    margin: 20px 0;
+  }
+  
+  .social-icon {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 20px;
+    text-decoration: none;
+  }
+  
+  .social-icon:hover {
+    color: #ff4500; /* Оранжевый цвет при наведении */
+  }
+  
+  
+  
+  .footer-info {
+    margin: 20px 0;
+    font-size: 14px;
+  }
+  
+  .footer-apps {
+    margin: 20px 0;
+  }
+  
+  .app-icon img {
+    width: 150px; /* Размер значков */
+    margin: 0 10px;
+  }
+  
+  .footer-sitemap {
+    margin: 20px 0;
+  }
+  
+  .footer-sitemap a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .footer-sitemap a:hover {
+    color: #ff4500; /* Оранжевый цвет при наведении */
+  }
+  
+  @media (max-width: 768px) {
+    .footer-content iframe {
+      height: 200px; /* Уменьшенная высота карты для мобильных устройств */
+    }
+  }
+
+  .card2 {
+    position: relative;
+    padding-top: 50px;
+    transform-style: preserve-3d;
+    background-size: 60px 60px;
+    background-position: 0 0, 0 0;
+    width: 100%;
+    box-shadow: rgba(142, 142, 142, 0.3) 0px 30px 30px -10px;
+    transition: all 0.5s ease-in-out;
+    border-radius: 15%;
+}
+
+.card2:hover {
+    background-position: -100px 100px, -100px 100px;
+    transform: rotate3d(0.5, 1, 0, 30deg);
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    border-radius: 15%;
+}
+
+.content-box {
+    background: rgba(81, 81, 82, 0.9);
+    transition: all 0.5s ease-in-out;
+    padding: 60px 25px 25px 25px;
+    transform-style: preserve-3d;
+    border-radius: 15%;
+}
+
+.content-box .card-title {
+    display: inline-block;
+    color: white;
+    font-size: 25px;
+    font-weight: 900;
+    transition: all 0.5s ease-in-out;
+    transform: translate3d(0px, 0px, 50px);
+}
+
+.content-box .card-title:hover {
+    transform: translate3d(0px, 0px, 60px);
+}
+
+.content-box .card-content {
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #f2f2f2;
+    transition: all 0.5s ease-in-out;
+    transform: translate3d(0px, 0px, 30px);
+}
+
+.content-box .card-content:hover {
+    transform: translate3d(0px, 0px, 60px);
+}
+
+.parent {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+  }
+
